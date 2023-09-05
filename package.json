@@ -40,9 +40,6 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "sync": "aws s3 sync --profile 'MuhdHanish' --region 'ap-south-1' ./build 's3://encode-learning-s3-host/'",
-    "invalidate": "aws cloudfront --profile 'MuhdHanish' --region 'ap-south-1' create-invalidation --distribution-id ES2ZWPFTT19JF --paths '/*'",
-    "build-sync-invalidate": "npm run build && npm run sync && npm run invalidate",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
