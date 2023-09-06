@@ -12,7 +12,7 @@ const TutorHome: React.FC = () => {
     <>
       <div className="w-full h-full flex justify-center items-center py-7 px-5  overflow-auto">
         <div
-          className={`bg-white  w-full max-w-[80%]  h-full overflow-auto rounded-md 
+          className={`bg-white  w-full sm:max-w-[80%]  min-h-[100%] overflow-auto rounded-md 
         flex justify-center items-center shadow-xl p-3 gap-5 flex-row}`}
         >
           <div className="lg:w-1/2  w-full h-full flex flex-col justify-around gap-5 items-center p-3 md:p-8 ">
