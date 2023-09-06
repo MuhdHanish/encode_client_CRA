@@ -38,7 +38,7 @@ const EditCourse: React.FC = () => {
   return (
     <div className="bg-white w-full  h-full flex justify-center items-center overflow-hidden relative ">
       {loading && <Loader />}
-      {!loading && courses?.length > 0 && (
+      {!loading && courses?.length > 0 ? (
         <>
           <div className="w-full  h-full p-5 overflow-hidden  overflow-y-scroll">
             <div className="w-full h-fit  grid grid-cols-1 lg:grid-cols-2 justify-start items-start gap-3">
@@ -106,7 +106,7 @@ const EditCourse: React.FC = () => {
             </div>
           </div>
         </>
-      )}{ !loading && !courses?.length && (
+      ):""}{ !loading && !courses?.length ? (
         <>
           <div className="flex w-full flex-col md:flex-row h-screen justify-center items-center  p-5 overflow-hidden">
             <div className="flex w-full h-full justify-center items-center flex-col">
@@ -125,7 +125,7 @@ const EditCourse: React.FC = () => {
             </div>
           </div>
         </>
-      )}
+      ): ""}
       {isOpen && <EditCourseModal setIsOpen={setIsOpen} />}
     </div>
   );

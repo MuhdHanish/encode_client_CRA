@@ -44,8 +44,8 @@ export const Notification = () => {
         </div>
         {drop && (
           <div
-            className={`navbar-dropdown z-50 fixed md:absolute top-24 right-14 md:top-14 md:right-0 bg-white shadow-md rounded 
-          flex flex-col w-fit min-w-[350px]`}
+            className={`navbar-dropdown z-50 fixed md:absolute top-14 right-0  bg-white shadow-md rounded 
+          flex flex-col  w-screen md:w-fit  min-w-[400px]`}
             id={"second-component"}
           >
             <div className="flex w-full h-fit justify-around items-center text-[13px] p-3">
@@ -77,12 +77,8 @@ export const Notification = () => {
                 Chats
               </div>
             </div>
-            {tab === 0 && (
-              <TabOne currentUser={currentUser as User}/>
-            )}
-            {tab === 1 && (
-              <TabTwo/>
-            )}
+            {tab === 0 && <TabOne currentUser={currentUser as User} />}
+            {tab === 1 && <TabTwo />}
           </div>
         )}
       </div>

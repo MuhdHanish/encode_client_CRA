@@ -16,7 +16,7 @@ const Authentication: React.FC<AuthenticationProps> = ({
       className="bg-authentication-background bg-cover flex justify-center items-center w-screen h-screen py-7 px-5"
     >
       <div
-        className={`bg-white w-full max-w-[80%] h-full overflow-auto rounded-md flex justify-center items-center shadow-xl p-3 gap-5 ${
+        className={`bg-white w-full sm:max-w-[80%] min-h-[100%] overflow-auto rounded-md flex justify-center items-center shadow-xl p-3   gap-5 ${
           reverse ? "flex-row-reverse" : "flex-row"
         }`}
       >

@@ -114,7 +114,7 @@ const TutorDashboard: React.FC = () => {
         </span>
       </div>
       {loading && <Loader />}
-      {!loading && courses?.length  && (
+      {!loading && courses?.length  ? (
         <>
           <div className=" grid md:grid-cols-3 gap-5">
             <div className="col-span-1 flex flex-col gap-10">
@@ -204,8 +204,8 @@ const TutorDashboard: React.FC = () => {
             )}
           </div>
         </>
-      )}{
-        !loading&& !courses?.length  &&(
+      ): ""}{
+        !loading&& !courses?.length   ?(
         <>
           <div className="flex w-full flex-col md:flex-row h-screen justify-center items-center  p-5 overflow-hidden">
             <div className="flex w-full h-full justify-center items-center flex-col">
@@ -224,7 +224,7 @@ const TutorDashboard: React.FC = () => {
             </div>
           </div>
         </>
-      )}
+      ): ""}
     </div>
   );
 };
