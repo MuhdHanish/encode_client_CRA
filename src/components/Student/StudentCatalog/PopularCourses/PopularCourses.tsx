@@ -80,7 +80,7 @@ const PopularCourses: React.FC<PopularCoursesProps> = ({ courses, selectedLangua
           </div>
         </div>
       </div>
-      <div className="flex flex-wrap px-5 gap-5 ">
+      <div className="flex flex-wrap px-5  gap-10 justify-center ">
         {currentPosts.length > 0 ? (
           currentPosts?.map((course) => (
             <div
