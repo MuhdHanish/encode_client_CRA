@@ -80,12 +80,12 @@ const PopularCourses: React.FC<PopularCoursesProps> = ({ courses, selectedLangua
           </div>
         </div>
       </div>
-      <div className="flex flex-wrap px-5 justify-between ">
+      <div className="flex flex-wrap px-5 gap-5 ">
         {currentPosts.length > 0 ? (
           currentPosts?.map((course) => (
             <div
               key={course._id}
-              className="flex w-full md:w-[271px] hover:bg-black delay-100 border rounded hover:border-black mb-5"
+              className="flex w-full md:w-[271px] hover:bg-black delay-100 border rounded hover:border-black"
             >
               <div
                 onClick={() => {
