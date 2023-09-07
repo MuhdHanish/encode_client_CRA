@@ -1,18 +1,20 @@
 import React,{useState,useEffect} from 'react'
 import { Course } from '../../../../dtos/Course'
-import { GoLock } from "react-icons/go";
 import StarRating from "../../../Common/StarRating/StarRating";
 import { User } from "../../../../dtos/User";
 import { useNavigate } from 'react-router-dom';
-import PayPal from '../../../PayPal/PayPal';
 import { setCourse } from '../../../../utils/courseUtils';
 import { toast } from "react-toastify";
+import Razorpay from '../../../RazorPay/RazorPay';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../../../redux/store';
 
 interface CourseDetailsProps {
   course:Course
 }
 
 const CourseDetails: React.FC<CourseDetailsProps> = ({ course }) => {
+  const user = useSelector((state: RootState) => state.userReducer.user);
   const [tutor, setTutor] = useState<User | null>(null);
   const navigate = useNavigate();
   useEffect(() => {
@@ -86,15 +88,7 @@ const CourseDetails: React.FC<CourseDetailsProps> = ({ course }) => {
         <div className="flex w-full  sm:w-1/2 h-fit justify-start items-center ">
           <div className="flex flex-wrap w-fit h-fit text-md font-normal">
             {(course?.price as number) > 0 ? (
-              <div className="flex flex-col gap-2">
-                <button className="btn-class min-w-[250px]  flex items-center justify-center gap-2">
-                  <span className="text-shadow-black">
-                    <GoLock />
-                  </span>
-                  <span>Purchase & Start</span>
-                </button>
-                <PayPal course={course} handleAddcourse={handleCourseAdd} />
-              </div>
+              <Razorpay course={course} user={user as User} handleAddcourse={handleCourseAdd}/>
             ) : (
               <div>
                 <button

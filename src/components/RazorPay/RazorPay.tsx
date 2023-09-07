@@ -1,6 +1,5 @@
 import React from "react";
 import { Course } from "../../dtos/Course";
-import {v4} from "uuid";
 import useRazorpay from "react-razorpay";
 import { GoLock } from "react-icons/go";
 import { User } from "../../dtos/User";
@@ -26,9 +25,8 @@ const Razorpay: React.FC<RazorpayProps> = ({
       description: "Course purchasing transaction",
       image:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS04hIuIDeWTnBHw6rdC8rNdUBZ1q3zUloKEiVlKGi-0Pq0GWnVfv2k4c7ZPRXK_zth3ms&usqp=CAU",
-      order_id: v4(),
-      handler: async function (response: any) {
-          await handleAddcourse();
+      handler:  function (response: any) {
+           handleAddcourse().then().catch(err=>console.log(err));
       },
       prefill: {
         name: user?.username as string,
