@@ -6,6 +6,7 @@ import { User } from "../../../../dtos/User";
 import { useNavigate } from 'react-router-dom';
 import PayPal from '../../../PayPal/PayPal';
 import { setCourse } from '../../../../utils/courseUtils';
+import { toast } from "react-toastify";
 
 interface CourseDetailsProps {
   course:Course
@@ -20,6 +21,9 @@ const CourseDetails: React.FC<CourseDetailsProps> = ({ course }) => {
   const handleCourseAdd = async () => {
     const courseDetails = await setCourse(course?._id as string);
     if (courseDetails) {
+      toast.success("Course added successfully!", {
+      position: "top-right", autoClose: 3000, hideProgressBar: false,closeOnClick: true,
+      pauseOnHover: true, draggable: true,progress: undefined,});
       navigate(`/selected/course/${course?._id as string}`, {
         replace: true,
       });
@@ -95,7 +99,7 @@ const CourseDetails: React.FC<CourseDetailsProps> = ({ course }) => {
               <div>
                 <button
                   className="btn-class min-w-[250px]  flex items-center justify-center gap-2"
-                  onClick={() => handleCourseAdd}
+                  onClick={() => handleCourseAdd()}
                 >
                   <span>Start</span>
                 </button>

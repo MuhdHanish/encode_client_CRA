@@ -36,14 +36,11 @@ const PayPal: React.FC<PayPalProps> = ({ course , handleAddcourse}) => {
           onApprove={(_data: any, actions: any) => {
             // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
             return actions.order.capture().then(async function () {
-            toast.success("Course added successfully!", {
-            position: "top-right", autoClose: 3000, hideProgressBar: false,closeOnClick: true,
-            pauseOnHover: true, draggable: true,progress: undefined,});
             await handleAddcourse();
             })
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           .catch(function (error: any) {
-            toast.success(error as string, {
+            toast.error(error as string, {
             position: "top-right", autoClose: 3000, hideProgressBar: false,closeOnClick: true,
             pauseOnHover: true, draggable: true,progress: undefined,});
           });
