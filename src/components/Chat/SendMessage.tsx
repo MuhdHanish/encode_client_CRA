@@ -14,10 +14,10 @@ interface SendMessageProps {
   containerRef: React.RefObject<HTMLDivElement>;
 }
 
-const SendMessage: React.FC<SendMessageProps> = ({selectedChat,setMessages,messages, socket,containerRef}) => {
+const SendMessage: React.FC<SendMessageProps> = ({ selectedChat, setMessages, messages, socket, containerRef }) => {
   const [content, setContent] = useState<string>("");
   const sendMessage = (content: string) => {
-    if (!content.length) { return }
+    if (!content.trim().length) { return }
     sendNewMessage(selectedChat?._id as string, content).then((res) => {
       setContent("");
       if (res) {
