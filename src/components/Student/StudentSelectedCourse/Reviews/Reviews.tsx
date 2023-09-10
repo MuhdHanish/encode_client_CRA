@@ -12,7 +12,7 @@ import { toast } from "react-toastify";
 
 interface ReivewsProps {
   review: Review,
-  setEdit?: (review: Review) => void;
+  setEdit?: (review: Review | null) => void;
   setReviewAgain?: (id: string) => void;
   courseId?:string
 }
@@ -25,6 +25,7 @@ const Reviews: React.FC<ReivewsProps> = ({ review, setEdit, setReviewAgain, cour
     deleteTheReview(id,courseId as string).then((res) => {
       if (res) {
         setReviewAgain?.(courseId as string);
+        setEdit?.(null);
         toast.success("Review deleted successfully!", {
           position: "top-right",
           autoClose: 3000,

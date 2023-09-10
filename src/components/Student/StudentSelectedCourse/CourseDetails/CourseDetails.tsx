@@ -83,11 +83,11 @@ const CourseDetails: React.FC<CourseDetailsProps> = ({ course }) => {
             )}
           </div>
         </div>
-        <div className="flex w-full  sm:w-1/2 h-fit justify-start items-center ">
+        <div className="flex w-fit h-fit justify-start items-center ">
           <div className="flex flex-wrap w-fit h-fit text-md font-normal">
             {(course?.price as number) > 0 ? (
               <div className="flex flex-col gap-2">
-                <button className="btn-class min-w-[250px]  flex items-center justify-center gap-2">
+                <button className="btn-class min-w-[200px]  flex items-center justify-center gap-2">
                   <span className="text-shadow-black">
                     <GoLock />
                   </span>
