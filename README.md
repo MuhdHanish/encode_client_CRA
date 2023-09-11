@@ -1,46 +1,69 @@
-# Getting Started with Create React App
+# Encode Learning App - Front End
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the Encode Learning App front end repository! This is the client-side of our MERN stack application, designed to provide a seamless learning experience.
 
-## Available Scripts
+## Prerequisites
 
-In the project directory, you can run:
+Before you start, make sure you have the following tools installed:
 
-### `npm start`
+- Node.js (v14 or higher)
+- npm (Node Package Manager)
+- Git
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Getting Started
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1. Clone the repository:
 
-### `npm test`
+git clone https://github.com/MuhdHanish/Encode-Client-CRA.git
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+2. Navigate to the project directory:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. Install dependencies:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+npm install
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+4. Start the development server:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+npm start
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+This will start the application in development mode. Open your browser and visit `http://localhost:3000` to see the app in action.
 
-## Learn More
+## Environment Variables
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+To run the Encode Learning App front end properly, you need to set up the following environment variables. Create a `.env` file in the root of your project and add the following:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+
+VITE_SERVER_URL= "your server url"
+VITE_GOOGLE_CLIENT="your google client id"
+VITE_BUCKET_NAME="your bucket name"
+VITE_REGION_NAME="your bucket region name"
+VITE_BUCKET_ACCESS_KEY="your bucket access key"
+VITE_BUCKET_SECRET_KEY="your bucket secret key"
+VITE_PAYPAL_CLIENT_ID="your paypa client id"
+VITE_BUCKET_BASE_URL="your bucket base url"
+
+
+Make sure to replace the values with your actual configuration.
+
+
+## Folder Structure
+
+- `/src/` - React components, assets, styles, routes, and services.
+- `/public/` - Public files (favicon, HTML template, etc.).
+- `.env` - Environment variables configuration.
+- `.gitignore` - Git ignore file.
+- `package.json` - Node.js dependencies and scripts.
+- `.tailwind.config.js` - Tailwind css configration and custom themes.  
+- `README.md` - This README file.
+
+## Contributing
+
+We welcome contributions! If you'd like to contribute to this project, please follow our [Contributing Guidelines](CONTRIBUTING.md).
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
