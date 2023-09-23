@@ -3,7 +3,6 @@ import { Chat } from '../../dtos/Chat';
 import { getChatUser } from '../../utils/chatUtils';
 import { User } from '../../dtos/User';
 import { Message } from '../../dtos/Message';
-import SearchInput from '../Common/SearchInput/SearchInput';
 import { useDispatch } from 'react-redux';
 import { setSelectedChat } from '../../redux/chatSlice/chatSlice';
 
@@ -37,10 +36,13 @@ const ChatSideBar: React.FC<ChatSideBarProps> = ({ chats, currentUser }) => {
     <div
       className={` hidden  lg:w-1/5 shadow-2xl lg:flex flex-col   h-full  p-3 gap-2  border-r`}
     >
-      <div className="w-full h-fit flex items-center justify-center ">
-        <SearchInput
-          searchQuery={searchQuery}
-          setSearchQuery={setSearchQuery}
+      <div className="w-full h-fit flex items-center justify-center  px-1.5">
+        <input
+          type="text"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          placeholder="search"
+          className="appearance-none bg-white border border-gray-300 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:border-primary"
         />
       </div>
       <div className="w-full h-full flex flex-col items-center  overflow-y-auto  px-1.5">
@@ -49,7 +51,9 @@ const ChatSideBar: React.FC<ChatSideBarProps> = ({ chats, currentUser }) => {
             <div
               className="my-2 text-[14px]  px-3 py-1 w-full justify-center  flex transition 
               duration-500 cursor-pointer  hover:border-primary border rounded overflow-hidden"
-              onClick={()=>{setChat(chat)}}
+              onClick={() => {
+                setChat(chat);
+              }}
               key={index}
             >
               <div className="flex w-full h-fit gap-3 items-center py-1">
@@ -70,7 +74,6 @@ const ChatSideBar: React.FC<ChatSideBarProps> = ({ chats, currentUser }) => {
                         ?.username
                     }
                   </div>
-                  
                 </div>
               </div>
             </div>
